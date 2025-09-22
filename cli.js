@@ -111,55 +111,18 @@ program
   .command('help')
   .description('Show detailed help and usage examples')
   .action(() => {
-    console.log(chalk.blue('\n📚 Etherscan Contract Fetcher - Help'));
-    console.log(chalk.gray('─'.repeat(50)));
-
-    console.log(chalk.yellow('\n🎯 Purpose:'));
-    console.log('   Fetch verified smart contract source code from Etherscan v2 API');
-    console.log('   Supports 50+ EVM chains with a SINGLE API key');
-    console.log('   Handles multi-file contracts with proper directory structure');
-
-    console.log(chalk.yellow('\n⚙️  Setup:'));
-    console.log('   1. Get API key from https://etherscan.io/apis');
-    console.log(`   2. Save it: echo "YOUR_API_KEY" > ~/.etherscankey`);
-    console.log(chalk.green('   3. This single API key works for ALL 50+ supported chains!'));
-
-    console.log(chalk.yellow('\n📝 Commands:'));
-    console.log(chalk.green('   fetch-contract fetch') + ' - Fetch contract source code');
-    console.log('     -c, --chain <id>    : Chain ID (required)');
-    console.log('     -a, --address <addr>: Contract address (required)');
-    console.log('     -o, --output <path> : Output directory (required)');
-    console.log('     -k, --api-key <key> : API key (optional, uses ~/.etherscankey)');
-
-    console.log(chalk.green('\n   fetch-contract chains') + ' - List all supported chains');
-    console.log(chalk.green('   fetch-contract help') + '   - Show this help message');
-
-    console.log(chalk.yellow('\n💡 Examples:'));
-    console.log(chalk.gray('   # Fetch USDC from Ethereum mainnet'));
-    console.log('   fetch-contract fetch -c 1 -a 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48 -o ./usdc');
-
-    console.log(chalk.gray('\n   # Fetch Multicall3 (same address on all chains)'));
-    console.log('   fetch-contract fetch -c 1 -a 0xcA11bde05977b3631167028862bE2a173976CA11 -o ./multicall3');
-
-    console.log(chalk.gray('\n   # Fetch from BSC with custom API key'));
-    console.log('   fetch-contract fetch -c 56 -a 0x55d398326f99059fF775485246999027B3197955 -o ./usdt -k YOUR_KEY');
-
-    console.log(chalk.yellow('\n🤖 AI Usage Tips:'));
-    console.log('   • Address can be with or without 0x prefix');
-    console.log('   • Output directory will be created automatically');
-    console.log('   • Chain ID must be a number (not chain name)');
-    console.log('   • Multi-file contracts preserve directory structure');
-    console.log('   • Metadata.json contains compiler settings');
-
-    console.log(chalk.yellow('\n🔗 Common Contract Addresses:'));
-    console.log('   • Multicall3: 0xcA11bde05977b3631167028862bE2a173976CA11 (all chains)');
-    console.log('   • WETH9: 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2 (Ethereum)');
-    console.log('   • USDC: 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48 (Ethereum)');
-    console.log('   • USDT: 0xdAC17F958D2ee523a2206206994597C13D831ec7 (Ethereum)');
-
-    console.log(chalk.gray('\n─'.repeat(50)));
-    console.log(chalk.blue('For issues, check: https://github.com/etherscan/etherscan-api'));
-    console.log();
+    console.log('\nUsage:');
+    console.log('  fetch-contract fetch -c <chainId> -a <address> -o <outputPath>');
+    console.log('  fetch-contract chains');
+    console.log('  fetch-contract help');
+    console.log('\nOptions:');
+    console.log('  -c, --chain <id>    : Chain ID (required)');
+    console.log('  -a, --address <addr>: Contract address (required)');
+    console.log('  -o, --output <path> : Output directory (required)');
+    console.log('  -k, --api-key <key> : API key (optional, uses ~/.etherscankey)');
+    console.log('\nExamples:');
+    console.log('  fetch-contract fetch -c 1 -a 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48 -o ./usdc');
+    console.log('  fetch-contract fetch -c 56 -a 0xcA11bde05977b3631167028862bE2a173976CA11 -o ./multicall3');
   });
 
 program
