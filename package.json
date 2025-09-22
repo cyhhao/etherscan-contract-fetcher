@@ -1,6 +1,6 @@
 {
   "name": "etherscan-contract-fetcher",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI tool to fetch verified smart contract source code from Etherscan v2 API",
   "main": "cli.js",
   "type": "module",
