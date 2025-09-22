@@ -110,11 +110,23 @@ program
 program
   .command('help')
   .description('Show detailed help and usage examples')
-  .action(() => {
+  .action(async () => {
     console.log('\nUsage:');
     console.log('  fetch-contract fetch -c <chainId> -a <address> -o <outputPath>');
     console.log('  fetch-contract chains');
     console.log('  fetch-contract help');
+
+    // Check if API key exists
+    const keyPath = path.join(os.homedir(), '.etherscankey');
+    try {
+      await fs.access(keyPath);
+    } catch {
+      console.log('\nSetup Required:');
+      console.log('  1. Get API key from https://etherscan.io/apis');
+      console.log('  2. Save it: echo "YOUR_API_KEY" > ~/.etherscankey');
+      console.log('  3. This single API key works for ALL 50+ supported chains');
+    }
+
     console.log('\nOptions:');
     console.log('  -c, --chain <id>    : Chain ID (required)');
     console.log('  -a, --address <addr>: Contract address (required)');
