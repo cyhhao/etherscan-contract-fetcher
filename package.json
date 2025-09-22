@@ -1,0 +1,39 @@
+{
+  "name": "etherscan-contract-fetcher",
+  "version": "1.0.0",
+  "description": "CLI tool to fetch verified smart contract source code from Etherscan v2 API",
+  "main": "cli.js",
+  "type": "module",
+  "bin": {
+    "fetch-contract": "./cli.js"
+  },
+  "scripts": {
+    "start": "node cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyhhao/etherscan-contract-fetcher.git"
+  },
+  "keywords": [
+    "etherscan",
+    "ethereum",
+    "blockchain",
+    "smart-contract",
+    "solidity",
+    "cli",
+    "web3",
+    "evm"
+  ],
+  "author": "cyhhao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cyhhao/etherscan-contract-fetcher/issues"
+  },
+  "homepage": "https://github.com/cyhhao/etherscan-contract-fetcher#readme",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "commander": "^12.1.0",
+    "chalk": "^5.3.0",
+    "ora": "^8.1.1"
+  }
+}
