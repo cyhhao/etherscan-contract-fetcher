@@ -65,6 +65,21 @@ program
       }
 
       console.log(`\nFiles: ${savedFiles.length}`);
+
+      // Show first-level files/directories for AI to navigate
+      const fileStructure = new Set();
+      savedFiles.forEach(file => {
+        const relativePath = path.relative(outputPath, file);
+        const firstLevel = relativePath.split(path.sep)[0];
+        if (firstLevel && firstLevel !== 'metadata.json') {
+          fileStructure.add(firstLevel);
+        }
+      });
+
+      if (fileStructure.size > 0) {
+        console.log('Structure:', Array.from(fileStructure).sort().join(', '));
+      }
+
       console.log(`Contract: ${contract.ContractName || 'Unknown'}`);
       console.log(`Compiler: ${contract.CompilerVersion || 'Unknown'}`);
       if (contract.OptimizationUsed === '1') {

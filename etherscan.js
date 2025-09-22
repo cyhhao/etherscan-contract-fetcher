@@ -157,8 +157,13 @@ export class EtherscanClient {
         const files = [];
 
         for (const [filePath, content] of Object.entries(sources)) {
+          // Remove unnecessary wrapper directories like 'solc_0.8/'
+          let cleanPath = filePath;
+          if (cleanPath.match(/^solc_[\d.]+\//)) {
+            cleanPath = cleanPath.replace(/^solc_[\d.]+\//, '');
+          }
           files.push({
-            path: filePath,
+            path: cleanPath,
             content: content.content || ''
           });
         }
@@ -174,8 +179,13 @@ export class EtherscanClient {
         if (parsed.language === 'Solidity' && parsed.sources) {
           const files = [];
           for (const [filePath, source] of Object.entries(parsed.sources)) {
+            // Remove unnecessary wrapper directories like 'solc_0.8/'
+            let cleanPath = filePath;
+            if (cleanPath.match(/^solc_[\d.]+\//)) {
+              cleanPath = cleanPath.replace(/^solc_[\d.]+\//, '');
+            }
             files.push({
-              path: filePath,
+              path: cleanPath,
               content: source.content || ''
             });
           }
