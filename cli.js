@@ -152,10 +152,9 @@ program
     });
   });
 
-// Show help if no command provided
-if (process.argv.length === 2) {
-  program.outputHelp();
-  console.log(chalk.gray('\n💡 Tip: Use "fetch-contract help" for detailed usage examples'));
-}
-
 program.parse();
+
+// Show tip if no command provided
+if (process.argv.length === 2) {
+  console.log(chalk.gray('\n💡 Tip: Use "fetch-contract help" for usage examples'));
+}
