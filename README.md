@@ -2,6 +2,33 @@
 
 A CLI tool for fetching verified smart contract source code from Etherscan using the unified v2 API. Optimized for AI agents and automated workflows.
 
+## Installation
+
+### Global Installation (Recommended)
+
+```bash
+# Install globally from npm
+npm install -g etherscan-contract-fetcher
+
+# Or using yarn
+yarn global add etherscan-contract-fetcher
+
+# Or install directly from GitHub
+npm install -g git+https://github.com/cyhhao/etherscan-contract-fetcher.git
+```
+
+After global installation, the `fetch-contract` command will be available anywhere in your terminal.
+
+### Local Installation
+
+```bash
+# Clone and install locally
+git clone https://github.com/cyhhao/etherscan-contract-fetcher.git
+cd etherscan-contract-fetcher
+npm install
+npm link  # Optional: Make available globally
+```
+
 ## Features
 
 - **Unified API**: Single API key for 50+ EVM chains via Etherscan v2 API
@@ -9,13 +36,6 @@ A CLI tool for fetching verified smart contract source code from Etherscan using
 - **Proxy Support**: Automatically detects proxy contracts and shows implementation addresses
 - **Multi-file Contracts**: Preserves directory structure for complex contracts
 - **AI-Optimized**: Minimal output, clear error messages, designed for automated use
-
-## Installation
-
-```bash
-npm install
-npm link  # Optional: Install globally
-```
 
 ## Setup
 

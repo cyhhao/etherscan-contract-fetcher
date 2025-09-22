@@ -1,0 +1,22 @@
+# Test files
+test/
+*.test.js
+
+# Config files
+.git/
+.gitignore
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# API Keys
+.etherscankey
+*.key
+
+# OS files
+.DS_Store
