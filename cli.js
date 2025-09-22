@@ -61,7 +61,8 @@ program
 
       // Display proxy information if this is a proxy contract
       if (contract.proxyInfo && contract.proxyInfo.isProxy && contract.proxyInfo.implementation) {
-        console.log(chalk.yellow(`Proxy → ${contract.proxyInfo.implementation}`));
+        console.log(chalk.yellow(`This is a proxy contract`));
+        console.log(chalk.yellow(`Logic contract: ${contract.proxyInfo.implementation}`));
       }
 
       console.log(`\nFiles: ${savedFiles.length}`);
